@@ -32,13 +32,6 @@ Comment.init(
         key: "id",
       },
     },
-    group_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "group",
-        key: "id",
-      },
-    },
   },
   {
     sequelize,
@@ -47,3 +40,5 @@ Comment.init(
     modelName: "comment",
   }
 );
+
+module.exports = Comment;
