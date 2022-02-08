@@ -23,7 +23,7 @@ Group.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "Group",
+    modelName: "group",
   }
 );
 
