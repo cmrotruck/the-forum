@@ -7,7 +7,7 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
-require("dotenv").config();
+// require("dotenv").config();
 const sess = {
   secret: process.env.SECRET,
   cookie: {},
@@ -33,6 +33,6 @@ app.set("view engine", "handlebars");
 app.use(routes);
 
 // turn on connection to db and server
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
