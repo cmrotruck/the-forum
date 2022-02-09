@@ -67,3 +67,23 @@ header nav div button:hover {
     border-radius: 15px;
     text-shadow: none;
 }
+
+.title {
+    font-size: 46px;
+    border-bottom: 3px solid;
+    border-color: var(--third-color);
+    color: var(--second-color);
+    padding-bottom: 10px;
+    text-align: center;
+    margin: 0 auto 35px auto;
+    width: 50%;
+}
+
+.about p {
+    line-height: 1.7;
+    color: var(--second-color);
+    width: 80%;
+    margin: 0 auto;
+    font-size: 20px;
+    text-align: center;
+}
