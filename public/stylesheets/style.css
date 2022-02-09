@@ -26,11 +26,11 @@ header {
 
 header h1 {
     font-weight: bolder;
-    font-size: 50px;
+    font-size: 60px;
     color: var(--fifth-color);
 }
 
-header h2 {
+header span {
     font-weight: bold;
     font-size: 25px;
     color: var(--fifth-color);
