@@ -44,3 +44,4 @@ User.hasMany(Post, {
 
 //export all models
 module.exports = { User, Post, Group, Comment };
+
