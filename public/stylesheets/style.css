@@ -30,6 +30,12 @@ header h1 {
     color: var(--fifth-color);
 }
 
+header h2 {
+    font-weight: bold;
+    font-size: 25px;
+    color: var(--fifth-color);
+}
+
 header nav {
     margin: 7px 0;
 }
