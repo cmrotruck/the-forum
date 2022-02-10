@@ -5,29 +5,9 @@ const { Post, User, Comment, Group } = require("../../models");
 router.get("/", (req, res) => {
   console.log("======================");
   Post.findAll({
-    //attributes: ["group_id", "post_text", "user_id"],
-    // include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ['group_id', 'post_text', 'user_id', 'comment-text'],
-    //     include: {
-    //       model: User,
-    //       attributes: ['username']
-    //     }
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ['username']
-    //   }
-    // ]
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-
-      // res.render("homepage", {
-      //   posts,
-      //   loggedIn: req.session.loggedIn,
-      // });
       res.json(dbPostData);
     })
     .catch((err) => {
@@ -36,40 +16,20 @@ router.get("/", (req, res) => {
     });
 });
 
-// get single post
-router.get("/post/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
-    },
-    attributes: ["group_id", "post_text", "user_id"],
-    include: [
-      {
-        model: Comment,
-        attributes: ["group_id", "post_text", "user_id", "comment-text"],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
-      {
-        model: User,
-        attributes: ["username"],
-      },
-    ],
+    }
   })
     .then((dbPostData) => {
       if (!dbPostData) {
-        res.status(404).json({ message: "No post found with this id" });
+        res
+          .status(404)
+          .json({ message: "There was no post located for this id." });
         return;
       }
-
-      const post = dbPostData.get({ plain: true });
-
-      res.render("single-post", {
-        post,
-        loggedIn: req.session.loggedIn,
-      });
+      res.json(dbPostData);
     })
     .catch((err) => {
       console.log(err);
@@ -77,13 +37,15 @@ router.get("/post/:id", (req, res) => {
     });
 });
 
-router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
 
-  res.render("login");
-});
+// Not used, as we are using modals rather than handlebars templates?
+// router.get("/login", (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect("/");
+//     return;
+//   }
+
+//   res.render("login");
+// });
 
 module.exports = router;
