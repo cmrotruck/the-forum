@@ -37,6 +37,20 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+  // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
+  Post.create({
+    post_text: req.body.post_text,
+    user_id: req.body.user_id,
+    group_id: req.body.group_id
+  })
+    .then(dbPostData => res.json(dbPostData))
+    .catch(err => {
+      console.log(err);
+      res.status(400).json(err);
+    });
+});
+
 
 // Not used, as we are using modals rather than handlebars templates?
 // router.get("/login", (req, res) => {
