@@ -51,4 +51,6 @@ async function signUpFormHandler(event) {
 }
 
 $("#loginModal").on("click", loginFormHandler);
+$("#loginButton").on("click", loginButtonHandler);
+
 $("#signUpModal").on("click", signUpFormHandler);
