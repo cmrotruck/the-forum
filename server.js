@@ -33,11 +33,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// Route to display static src images
-app.get("/public", (req, res) => {
-  res.render("public");
-});
-
 app.use(routes);
 
 // turn on connection to db and server
