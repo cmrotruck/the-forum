@@ -30,7 +30,7 @@ header h1 {
     color: var(--fifth-color);
 }
 
-header span {
+header h1 div {
     font-weight: bold;
     font-size: 25px;
     color: var(--fifth-color);
