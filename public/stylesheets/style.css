@@ -89,6 +89,11 @@ header nav div button:hover {
   padding-bottom: 20px;
 }
 
+.ui .segment {
+  text-align: center;
+  color: white;
+}
+
 .modal h1 {
   color: white;
   border-bottom: 3px solid var(--second-color);
