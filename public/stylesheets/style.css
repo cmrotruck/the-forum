@@ -97,7 +97,12 @@ header nav button:hover {
 }
 
 .groups {
-    margin-bottom: 30px;
+    margin: 20px;
+}
+
+.card image {
+    width: auto;
+    height: 300px;
 }
 
 footer {
