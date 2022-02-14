@@ -22,6 +22,7 @@ header {
     position: -webkit-sticky;
     top: 0;
     background-size: cover;
+    margin-bottom: 30px;
 }
 
 header h1 {
@@ -47,7 +48,7 @@ header nav div {
     align-items: center;
 }
 
-header nav div button {
+header nav button {
     background-color: var(--first-color);
     border: none;
     color: white;
@@ -61,7 +62,7 @@ header nav div button {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-header nav div button:hover {
+header nav button:hover {
     background: var(--third-color);
     color: white;
     border-radius: 15px;
