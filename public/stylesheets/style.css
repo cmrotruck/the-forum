@@ -12,6 +12,11 @@
     padding: 0;
 }
 
+body {
+    position: relative;
+    /* min-height: 100%; */
+}
+
 header {
     padding: 20px 35px;
     background-color: var(--second-color);
@@ -88,4 +93,27 @@ header nav button:hover {
     font-size: 20px;
     text-align: center;
     padding-bottom: 20px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background: var(--second-color);
+    width: 100%;
+    padding: 40px 35px;
+    margin-top: 30px;
+}
+
+footer h3 {
+    text-align: center;
+    width: 100%;
+    color: var(--fifth-color);
+}
+
+footer a {
+    color: var(--fifth-color);
+}
+
+footer a:hover {
+    color: var(--third-color);
 }
