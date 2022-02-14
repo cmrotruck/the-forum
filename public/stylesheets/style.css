@@ -126,3 +126,8 @@ footer a {
 footer a:hover {
     color: var(--third-color);
 }
+
+#comment-submit {
+    color: var(--first-color);
+    text-decoration-color: white;
+}
