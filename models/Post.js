@@ -11,6 +11,13 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    post_title: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
+    },
     post_text: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -31,6 +38,10 @@ Post.init(
         model: "group",
         key: "id",
       },
+    },
+    post_image: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {

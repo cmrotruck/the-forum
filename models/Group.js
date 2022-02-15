@@ -18,6 +18,10 @@ Group.init(
         len: [1],
       },
     },
+    group_image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     sequelize,
