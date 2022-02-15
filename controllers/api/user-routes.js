@@ -97,7 +97,7 @@ router.post('/signup', async (req, res) => {
       req.session.loggedIn = true;
 
     res.status(200).json(dbUserData);
-    // });
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
