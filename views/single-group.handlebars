@@ -1,17 +1,17 @@
 <div>
-    <h2 class="title boarder">
-      {{group-name}}
-    </h2>
+  <h2 class="title boarder">
+    {{group.group_name}}
+  </h2>
 </div>
 
 <div class="ui relaxed divided list">
-
-{{> comments group.posts}}
-
+  {{#each group.posts as |post|}}
+    {{> post post }}
+  {{/each}}
 </div>
 
 {{#if loggedIn}}
-<h3 class="ui top attached header new-post-form">Add a new post</h3>
+  <h3 class="ui top attached header new-post-form">Add a new post</h3>
   <div class="ui attached segment">
     <form class="ui form">
       <div class="field">
@@ -23,12 +23,15 @@
         <textarea id="post-text" name="post-text"></textarea>
       </div>
       <div id="post-submit" class="ui labeled submit icon button">
-        <i class="icon edit"></i> Add Post
+        <i class="icon edit"></i>
+        Add Post
       </div>
     </form>
   </div>
 {{/if}}
 
 {{#if loggedIn}}
-<script src="/javascript/add-post.js"></script>
+  <script src="/javascript/add-post.js"></script>
 {{/if}}
+
+{{> modals }}
