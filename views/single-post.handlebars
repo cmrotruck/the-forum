@@ -7,15 +7,16 @@
 </div>
 
 <div class="ui segment">
-  <h3 class="ui header">{{ post_title }}</h3>
-  <img class="ui small left floated image" src="{{ post_image }}">
-  {{ post_text }}
+  <h3 class="ui header">{{ post.post_title }}</h3>
+  <img class="ui small left floated image" src="{{ post.post_image }}">
+  {{ post.post_text }}
 </div>
 
 <div class="ui comments">
   <h3 class="ui dividing header">Comments</h3>
-  
-  {{> comments post.comments}}
+  {{#each post.comments as |comment|}}
+  {{> comment comment}}
+  {{/each}}
   
   {{#if loggedIn}}
   <form class="ui reply form comment-form">

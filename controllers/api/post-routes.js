@@ -16,10 +16,10 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
-  Post.findOne({
+router.get(":id", (req, res) => {
+  Comment.findAll({
     where: {
-      id: req.params.id,
+      post_id: req.params.id,
     }
   })
     .then((dbPostData) => {

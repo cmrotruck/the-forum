@@ -3,7 +3,7 @@ const res = require("express/lib/response");
 const sequelize = require("../config/connection");
 const { Post, User, Comment, Group } = require("../models");
 
-// handlebars set up
+// homepage route
 router.get("/", (req, res) => {
   Group.findAll({
     attributes: ["id", "group_image", "group_name"],
@@ -20,19 +20,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// router.get("/groups/:id", (req, res) => {
-//   Post.findAll({
-//     where: {
-//       Group_id: req.params.id,
-//     },
-//     attributes: ["id", "post_title", "post_text", "user_id", "post_image"],
-//   }).then((dbPostsData) => {
-//     //serialize the data
-//     const posts = dbPostsData.map((post) => post.get({ plain: true }));
-//     res.render("single-group", { posts });
-//   });
-// });
-
+// group route
 router.get("/groups/:id", async (req, res) => {
   try {
     const dbGroupData = await Group.findByPk(req.params.id, {
@@ -54,6 +42,34 @@ router.get("/groups/:id", async (req, res) => {
     const group = dbGroupData.get({ plain: true });
     console.log(group);
     res.render("single-group", { group });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// post route
+router.get("/posts/:id", async (req, res) => {
+  try {
+    const dbPostData = await Post.findByPk(req.params.id, {
+      attributes: ["id", "post_image", "post_title", "post_text"],
+      include: [
+        {
+          model: Comment,
+          attributes: [
+            "id",
+            "comment_text",
+            "post_id",
+            "user_id",
+            "created_at",
+          ],
+        },
+      ],
+    });
+
+    const post = dbPostData.get({ plain: true });
+    console.log(post);
+    res.render("single-post", { post });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

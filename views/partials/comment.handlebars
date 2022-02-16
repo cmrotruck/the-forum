@@ -1,4 +1,3 @@
-{{#each}}
   <div class="comment">
     <a class="avatar">
       <i class="user circle icon"></i>
@@ -6,11 +5,10 @@
     <div class="content">
       <a class="author">{{ user.username }}</a>
       <div class="metadata">
-        <span class="date">{{ format_date created_at }}</span>
+        <span class="date">{{ created_at }}</span>
       </div>
       <div class="text">
         {{ comment_text }}
       </div>
     </div>
   </div>
-{{/each}}
