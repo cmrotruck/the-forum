@@ -120,3 +120,15 @@ footer a {
 footer a:hover {
   color: var(--third-color);
 }
+
+/* start modal styling */
+.ui .segment {
+  text-align: center;
+  color: white;
+}
+
+.modal h1 {
+  color: white;
+  border-bottom: 3px solid var(--second-color);
+  padding-bottom: 1%;
+}
