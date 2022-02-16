@@ -41,7 +41,7 @@ router.get("/groups/:id", async (req, res) => {
 
     const group = dbGroupData.get({ plain: true });
     console.log(group);
-    res.render("single-group", { group });
+    res.render("single-group", { group, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -70,7 +70,7 @@ router.get("/posts/:id", async (req, res) => {
 
     const post = dbPostData.get({ plain: true });
     console.log(post);
-    res.render("single-post", { post });
+    res.render("single-post", { post, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
