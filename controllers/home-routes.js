@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
       const groups = dbGroupData.map((group) => group.get({ plain: true }));
 
       console.log(groups);
-      res.render("homepage", { groups, loggedIn: req.session.id });
+      res.render("homepage", { groups, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
