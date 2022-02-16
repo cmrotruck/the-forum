@@ -30,7 +30,13 @@ header {
   margin-bottom: 30px;
 }
 
-header h1 {
+header h1 a {
+  font-weight: bolder;
+  font-size: 60px;
+  color: var(--fifth-color);
+}
+
+header h1 a:hover {
   font-weight: bolder;
   font-size: 60px;
   color: var(--fifth-color);

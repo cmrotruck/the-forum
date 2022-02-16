@@ -18,19 +18,20 @@
   {{> comment comment}}
   {{/each}}
   
-  {{#if loggedIn}}
-  <form class="ui reply form comment-form">
+  {{!-- {{#if loggedIn}} --}}
+  <form class="ui form comment-form">
     <div class="field">
       <textarea name="comment-body"></textarea>
     </div>
-    <div id="comment-submit" class="ui labeled submit icon button">
+    <button class="ui button" type="submit">Add Comment</button>
+    {{!-- <div id="comment-submit" class="ui labeled submit icon button">
       <i class="icon edit"></i> Add Comment
-    </div>
+    </div> --}}
   </form>
-  {{/if}}
+  {{!-- {{/if}} --}}
 
 </div>
 
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-{{/if}}
+{{!-- {{#if loggedIn}} --}}
+<script src="javascript/add-comment.js"></script>
+{{!-- {{/if}} --}}
