@@ -20,7 +20,11 @@
         <nav>
           <div>
             <form>
-              <button type="submit" id="loginModal">Login</button>
+              {{#if loggedIn}}
+                <button type="submit" id="logoutButton">Logout</button>
+              {{else}}
+                <button type="submit" id="loginModal">Login</button>
+              {{/if}}
               <button type="submit" id="signUpModal">Sign Up</button>
             </form>
           </div>
