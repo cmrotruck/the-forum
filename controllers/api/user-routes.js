@@ -95,7 +95,11 @@ router.post("/signup", async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
 
+<<<<<<< HEAD
       res.status(200).json(dbUserData);
+=======
+    res.status(200).json(dbUserData);
+>>>>>>> 282d6e860976aca615d3122ea9b9583dd7ab7cba
     });
   } catch (err) {
     console.log(err);

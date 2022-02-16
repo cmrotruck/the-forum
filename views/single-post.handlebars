@@ -1,0 +1,35 @@
+<div class="ui mini breadcrumb">
+  <a class="section" href="">Home</a>
+  <i class="right chevron icon divider"></i>
+  <a class="section" href="">"Group"</a>
+  <i class="right chevron icon divider"></i>
+  <div class="active section">"Post Title"</div>
+</div>
+
+<div class="ui segment">
+  <h3 class="ui header">{{ post_title }}</h3>
+  <img class="ui small left floated image" src="{{ post_image }}">
+  {{ post_text }}
+</div>
+
+<div class="ui comments">
+  <h3 class="ui dividing header">Comments</h3>
+  
+  {{> comments post.comments}}
+  
+  {{#if loggedIN}}
+  <form class="ui reply form comment-form">
+    <div class="field">
+      <textarea name="comment-body"></textarea>
+    </div>
+    <div id="comment-submit" class="ui labeled submit icon button">
+      <i class="icon edit"></i> Add Comment
+    </div>
+  </form>
+  {{/if}}
+
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
