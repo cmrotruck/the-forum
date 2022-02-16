@@ -61,8 +61,15 @@ router.get("/posts/:id", async (req, res) => {
             "comment_text",
             "post_id",
             "user_id",
+            "group_id",
             "created_at",
           ],
+          // include: {
+          //   model: Group,
+          //   attributes: [
+          //   "group_name"
+          //   ],
+          // },
         },
       ],
     });

@@ -31,6 +31,13 @@ Comment.init(
         model: 'post',
         key: 'id'
       }
+    },
+    group_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "group",
+        key: "id",
+      }
     }
   },
   {
