@@ -45,15 +45,14 @@ async function logoutButtonHandler(event) {
   event.preventDefault();
 
   const response = await fetch("/api/users/logout", {
-    method: "post",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
   });
-  console.log(response);
+
   if (response.ok) {
-    alert("Logged Out!");
     document.location.replace("/");
   } else {
-    alert(response.statusText);
+    alert("Failed to log out.");
   }
 }
 
