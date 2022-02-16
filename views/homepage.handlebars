@@ -16,6 +16,13 @@
   </div>
 </section>
 
-{{> group-cards}}
+<div class="ui two stackable cards">
+  {{#each groups as |group|}}
+    {{> group-cards group }}
+  {{/each}}
+</div>
+
+
+{{!-- {{> group-cards groups}} --}}
 
 {{> modals }}
