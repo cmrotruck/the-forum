@@ -12,6 +12,12 @@
   padding: 0;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 header {
   padding: 20px 35px;
   background-color: var(--second-color);
@@ -21,7 +27,7 @@ header {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
-  background-size: cover;
+  margin-bottom: 30px;
 }
 
 header h1 {
@@ -30,7 +36,7 @@ header h1 {
   color: var(--fifth-color);
 }
 
-header span {
+header h1 div {
   font-weight: bold;
   font-size: 25px;
   color: var(--fifth-color);
@@ -47,7 +53,7 @@ header nav div {
   align-items: center;
 }
 
-header nav div button {
+header nav button {
   background-color: var(--first-color);
   border: none;
   color: white;
@@ -58,10 +64,10 @@ header nav div button {
   display: inline-block;
   font-size: 14px;
   border-radius: 8px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-header nav div button:hover {
+header nav button:hover {
   background: var(--third-color);
   color: white;
   border-radius: 15px;
@@ -89,12 +95,28 @@ header nav div button:hover {
   padding-bottom: 20px;
 }
 
-.ui .segment {
-  text-align: center;
-  color: white;
+.page_content {
+  margin: 20px;
 }
 
-.modal h1 {
-  color: white;
-  border-bottom: 3px solid var(--second-color);
+footer {
+  background-color: var(--second-color);
+  flex: 0 0 50px;
+  margin-top: auto;
+  width: 100%;
+  padding: 25px 0;
+}
+
+footer h3 {
+  text-align: center;
+  width: 100%;
+  color: var(--fifth-color);
+}
+
+footer a {
+  color: var(--fifth-color);
+}
+
+footer a:hover {
+  color: var(--third-color);
 }
