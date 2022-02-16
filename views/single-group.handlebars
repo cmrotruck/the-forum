@@ -10,7 +10,7 @@
   {{/each}}
 </div>
 
-{{!-- {{#if loggedIn}} --}}
+{{#if loggedIn}}
   <h3 class="ui top attached header new-post-form">Add a new post</h3>
   <div class="ui attached segment">
     <form class="ui form">
@@ -25,8 +25,8 @@
       <button class="ui button" type="submit">Add Post</button>
     </form>
   </div>
-{{!-- {{/if}} --}}
+{{/if}}
 
-{{!-- {{#if loggedIn}} --}}
+{{#if loggedIn}}
   <script src="/javascript/add-post.js"></script>
-{{!-- {{/if}} --}}
+{{/if}}

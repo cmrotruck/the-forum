@@ -64,12 +64,6 @@ router.get("/posts/:id", async (req, res) => {
             "group_id",
             "created_at",
           ],
-          // include: {
-          //   model: Group,
-          //   attributes: [
-          //   "group_name"
-          //   ],
-          // },
         },
       ],
     });

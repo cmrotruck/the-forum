@@ -33,9 +33,9 @@ Comment.belongsTo(Post, {
   foreignKey: "post_id",
 });
 
-Comment.belongsTo(Group, {
-  foreignKey: "group_id"
-});
+// Comment.belongsTo(Group, {
+//   foreignKey: "group_id"
+// });
 
 //user associations
 User.hasMany(Comment, {
