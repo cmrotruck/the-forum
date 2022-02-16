@@ -115,6 +115,13 @@ footer h3 {
 
 footer a {
   color: var(--fifth-color);
+<<<<<<< HEAD
+=======
+}
+
+footer a:hover {
+  color: var(--third-color);
+>>>>>>> ed0a33df0dafc8185dde19c82af102df22c19bdd
 }
 
 footer a:hover {
