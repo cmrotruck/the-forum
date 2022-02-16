@@ -107,10 +107,14 @@ header nav button:hover {
 
 footer {
   background-color: var(--second-color);
-  flex: 0 0 50px;
+  flex: 1 100%;
   margin-top: auto;
   width: 100%;
   padding: 25px 0;
+  /* position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; */
 }
 
 footer h3 {
