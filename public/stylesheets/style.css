@@ -13,35 +13,39 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-
-    padding: 20px 35px;
-    background-color: var(--second-color);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    background-size: cover;
-    margin-bottom: 30px;
+  padding: 20px 35px;
+  background-color: var(--second-color);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  margin-bottom: 30px;
 }
 
-header h1 {
+header h1 a {
+  font-weight: bolder;
+  font-size: 60px;
+  color: var(--fifth-color);
+}
+
+header h1 a:hover {
   font-weight: bolder;
   font-size: 60px;
   color: var(--fifth-color);
 }
 
 header h1 div {
-    font-weight: bold;
-    font-size: 25px;
-    color: var(--fifth-color);
+  font-weight: bold;
+  font-size: 25px;
+  color: var(--fifth-color);
 }
 
 header nav {
@@ -56,24 +60,24 @@ header nav div {
 }
 
 header nav button {
-    background-color: var(--first-color);
-    border: none;
-    color: white;
-    padding: 12px 24px;
-    margin: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: var(--first-color);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 header nav button:hover {
-    background: var(--third-color);
-    color: white;
-    border-radius: 15px;
-    text-shadow: none;
+  background: var(--third-color);
+  color: white;
+  border-radius: 15px;
+  text-shadow: none;
 }
 
 .title {
@@ -88,49 +92,6 @@ header nav button:hover {
 }
 
 .about p {
-    line-height: 1.7;
-    color: var(--second-color);
-    width: 80%;
-    margin: 0 auto;
-    font-size: 20px;
-    text-align: center;
-    padding-bottom: 20px;
-}
-
-.page_content {
-    margin: 20px;
-}
-
-.card image {
-    width: auto;
-    height: 300px;
-}
-
-footer {
-    background-color: var(--second-color);
-    flex: 0 0 50px;
-    margin-top: auto;
-    width: 100%;
-    padding: 25px 0;
-}
-
-footer h3 {
-    text-align: center;
-    width: 100%;
-    color: var(--fifth-color);
-}
-
-footer a {
-    color: var(--fifth-color);
-}
-
-footer a:hover {
-    color: var(--third-color);
-}
-
-#comment-submit {
-    color: var(--first-color);
-    text-decoration-color: white;
   line-height: 1.7;
   color: var(--second-color);
   width: 80%;
@@ -140,6 +101,37 @@ footer a:hover {
   padding-bottom: 20px;
 }
 
+.page_content {
+  margin: 20px;
+}
+
+footer {
+  background-color: var(--second-color);
+  flex: 1 100%;
+  margin-top: auto;
+  width: 100%;
+  padding: 25px 0;
+  /* position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%; */
+}
+
+footer h3 {
+  text-align: center;
+  width: 100%;
+  color: var(--fifth-color);
+}
+
+footer a {
+  color: var(--fifth-color);
+}
+
+footer a:hover {
+  color: var(--third-color);
+}
+
+/* start modal styling */
 .ui .segment {
   text-align: center;
   color: white;
@@ -148,5 +140,5 @@ footer a:hover {
 .modal h1 {
   color: white;
   border-bottom: 3px solid var(--second-color);
+  padding-bottom: 1%;
 }
-

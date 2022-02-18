@@ -41,6 +41,21 @@ async function loginButtonHandler(event) {
   }
 }
 
+async function logoutButtonHandler(event) {
+  event.preventDefault();
+
+  const response = await fetch("/api/users/logout", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    document.location.replace("/");
+  } else {
+    alert("Failed to log out.");
+  }
+}
+
 async function signUpFormHandler(event) {
   event.preventDefault();
   console.log("loading sign up modal");
@@ -109,6 +124,7 @@ async function signUpButtonHandler(event) {
 
 $("#loginModal").on("click", loginFormHandler);
 $("#loginButton").on("click", loginButtonHandler);
+$("#logoutButton").on("click", logoutButtonHandler);
 
 $("#signUpModal").on("click", signUpFormHandler);
 $("#signUpButton").on("click", signUpButtonHandler);

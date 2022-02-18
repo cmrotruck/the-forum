@@ -1,29 +1,32 @@
 <div>
-    <h2 class="title boarder">
-      Group Title
-    </h2>
+  <h2 class="title boarder">
+    {{group.group_name}}
+  </h2>
 </div>
 
-<div class="ui relaxed divided list twelve wide column">
-    <div class="item">
-        <i class="large github middle aligned icon"></i>
-        <div class="content">
-            <a class="header">Semantic-Org/Semantic-UI</a>
-        <div class="description">Updated 10 mins ago</div>
-        </div>
-    </div>
-    <div class="item">
-        <i class="large github middle aligned icon"></i>
-        <div class="content">
-            <a class="header">Semantic-Org/Semantic-UI-Docs</a>
-        <div class="description">Updated 22 mins ago</div>
-        </div>
-    </div>
-    <div class="item">
-        <i class="large github middle aligned icon"></i>
-        <div class="content">
-            <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
-        <div class="description">Updated 34 mins ago</div>
-        </div>
-    </div>
+<div class="ui relaxed divided list">
+  {{#each group.posts as |post|}}
+    {{> post post }}
+  {{/each}}
 </div>
+
+{{#if loggedIn}}
+  <h3 class="ui top attached header new-post-form">Add a new post</h3>
+  <div class="ui attached segment">
+    <form class="ui form">
+      <div class="field">
+        <label for="post-title">Post Title</label>
+        <input type="text" id="post-title" name="post-title" />
+      </div>
+      <div class="field">
+        <label for="post-text">Post Text</label>
+        <textarea id="post-text" name="post-text"></textarea>
+      </div>
+      <button class="ui button" type="submit">Add Post</button>
+    </form>
+  </div>
+{{/if}}
+
+{{#if loggedIn}}
+  <script src="/javascript/add-post.js"></script>
+{{/if}}
