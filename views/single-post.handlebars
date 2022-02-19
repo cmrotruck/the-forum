@@ -1,16 +1,35 @@
 <div class="ui mini breadcrumb">
   <a class="section" href="/">Home</a>
   <i class="right chevron icon divider"></i>
-  <a class="section" href="/group/{{post.group_id}}">group_name</a>
+  <a class="section" href="/group/{{group.group_id}}">group_name</a>
   <i class="right chevron icon divider"></i>
   <div class="active section">{{ post.post_title}}</div>
 </div>
 
-<div class="ui segment">
+{{!-- <div class="ui segment">
   <h3 class="ui header">{{ post.post_title }}</h3>
   <img class="ui small left floated image" src="{{ post.post_image }}">
   {{ post.post_text }}
-</div>
+</div> --}}
+
+<div class="ui items">
+  <div class="item">
+    <div class="image">
+      <img src="{{ post.post_image }}">
+    </div>
+    <div class="content">
+      <a class="header">{{ post.post_title }}</a>
+      <div class="meta">
+        <span>{{ user.username }}</span>
+      </div>
+      <div class="description">
+        <p>{{ post.post_text }}</p>
+      </div>
+      <div class="extra">
+        {{ post.created_at }}
+      </div>
+    </div>
+  </div>
 
 <div class="ui comments">
   <h3 class="ui dividing header">Comments</h3>
