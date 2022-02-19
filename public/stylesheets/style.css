@@ -24,8 +24,6 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: sticky;
-  position: -webkit-sticky;
   top: 0;
   margin-bottom: 30px;
 }
@@ -112,6 +110,16 @@ footer {
   width: 100%;
   padding: 25px 0;
 }
+
+/* footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+} */
 
 footer h3 {
   text-align: center;
