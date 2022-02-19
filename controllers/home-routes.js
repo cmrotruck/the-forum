@@ -2,6 +2,7 @@ const router = require("express").Router();
 const res = require("express/lib/response");
 const sequelize = require("../config/connection");
 const { Post, User, Comment, Group } = require("../models");
+var hasImage = false;
 
 // homepage route
 router.get("/", (req, res) => {
@@ -80,12 +81,22 @@ router.get("/posts/:id", async (req, res) => {
     });
 
     const post = dbPostData.get({ plain: true });
-    console.log(post);
-    res.render("single-post", { post, loggedIn: req.session.loggedIn });
+    console.log("********" + post.post_image + "********");
+
+    if (post.post_image) {
+      hasImage = true;
+    }
+
+    console.log("********" + hasImage + "********");
+
+    res.render("single-post", { post, loggedIn: req.session.loggedIn, hasImage: hasImage });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+
+  hasImage = false;
+  
 });
 
 module.exports = router;
