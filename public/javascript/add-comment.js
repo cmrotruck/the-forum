@@ -2,8 +2,8 @@ async function commentFormHandler(event) {
     event.preventDefault();
   
     const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
-    const post_id = window.location.toString().split('/api/posts/:id')[
-      window.location.toString().split('/api/posts:id').length - 1
+    const post_id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1
     ];
   
     if (comment_text) {
@@ -26,4 +26,4 @@ async function commentFormHandler(event) {
     }
   }
   
-  document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+  document.querySelector('#comment-form').addEventListener('submit', commentFormHandler);

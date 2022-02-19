@@ -11,7 +11,7 @@
 </div>
 
 {{#if loggedIn}}
-  <h3 class="ui top attached header new-post-form">Add a new post</h3>
+  <h3 id="new-post-form" class="ui top attached header">Add a new post</h3>
   <div class="ui attached segment">
     <form class="ui form">
       <div class="field">
@@ -22,7 +22,7 @@
         <label for="post-text">Post Text</label>
         <textarea id="post-text" name="post-text"></textarea>
       </div>
-      <button class="ui button" type="submit">Add Post</button>
+      <button id="post-button" class="ui button" type="submit">Add Post</button>
     </form>
   </div>
 {{/if}}

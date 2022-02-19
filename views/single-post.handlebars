@@ -1,16 +1,10 @@
 <div class="ui mini breadcrumb">
   <a class="section" href="/">Home</a>
   <i class="right chevron icon divider"></i>
-  <a class="section" href="/group/{{group.group_id}}">group_name</a>
+  <a class="section" href="/groups/{{post.group_id}}">group_name</a>
   <i class="right chevron icon divider"></i>
   <div class="active section">{{ post.post_title}}</div>
 </div>
-
-{{!-- <div class="ui segment">
-  <h3 class="ui header">{{ post.post_title }}</h3>
-  <img class="ui small left floated image" src="{{ post.post_image }}">
-  {{ post.post_text }}
-</div> --}}
 
 <div class="ui items">
   <div class="item">
@@ -38,7 +32,7 @@
   {{/each}}
   
   {{#if loggedIn}}
-  <form class="ui form comment-form">
+  <form id="comment-form" class="ui form">
     <div class="field">
       <textarea name="comment-body"></textarea>
     </div>
@@ -49,5 +43,5 @@
 </div>
 
 {{#if loggedIn}}
-<script src="javascript/add-comment.js"></script>
+<script src="../javascript/add-comment.js"></script>
 {{/if}}
