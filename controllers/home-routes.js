@@ -52,7 +52,7 @@ router.get("/groups/:id", async (req, res) => {
 router.get("/posts/:id", async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id, {
-      attributes: ["id", "post_image", "user_id", "post_title", "post_text", "created_at"],
+      attributes: ["id", "post_image", "group_id", "user_id", "post_title", "post_text", "created_at"],
       include: [
         {
           model: Comment,
@@ -61,10 +61,21 @@ router.get("/posts/:id", async (req, res) => {
             "comment_text",
             "post_id",
             "user_id",
-            "group_id",
             "created_at",
           ],
         },
+        {
+          model: Group,
+          attributes: [
+            "group_name",
+          ],
+        },
+        {
+          model: User,
+          attributes: [
+            "username",
+          ]
+        }
       ],
     });
 

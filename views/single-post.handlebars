@@ -1,7 +1,7 @@
 <div class="ui mini breadcrumb">
   <a class="section" href="/">Home</a>
   <i class="right chevron icon divider"></i>
-  <a class="section" href="/groups/{{post.group_id}}">group_name</a>
+  <a class="section" href="/groups/{{post.group_id}}">{{post.group.group_name}}</a>
   <i class="right chevron icon divider"></i>
   <div class="active section">{{ post.post_title}}</div>
 </div>
@@ -14,7 +14,7 @@
     <div class="content">
       <a class="header">{{ post.post_title }}</a>
       <div class="meta">
-        <span>{{ user.username }}</span>
+        <span>{{ post.user.username }}</span>
       </div>
       <div class="description">
         <p>{{ post.post_text }}</p>
