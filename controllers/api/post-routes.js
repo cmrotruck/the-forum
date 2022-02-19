@@ -39,7 +39,9 @@ router.get(":id", (req, res) => {
 
 router.post('/', (req, res) => {
   // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
+  console.log(req);
   Post.create({
+    post_title: req.body.post_title,
     post_text: req.body.post_text,
     user_id: req.body.user_id,
     group_id: req.body.group_id
