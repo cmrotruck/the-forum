@@ -8,9 +8,11 @@
 
 <div class="ui items">
   <div class="item">
+    {{#if hasImage}}
     <div class="image">
       <img src="{{ post.post_image }}">
     </div>
+    {{/if}}
     <div class="content">
       <a class="header">{{ post.post_title }}</a>
       <div class="meta">
