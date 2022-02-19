@@ -44,7 +44,8 @@ router.post('/', (req, res) => {
     post_title: req.body.post_title,
     post_text: req.body.post_text,
     user_id: req.body.user_id,
-    group_id: req.body.group_id
+    group_id: req.body.group_id,
+    post_image: req.body.post_image
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
