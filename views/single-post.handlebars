@@ -1,35 +1,53 @@
 <div class="ui mini breadcrumb">
-  <a class="section" href="">Home</a>
+  <a class="section" href="/">Home</a>
   <i class="right chevron icon divider"></i>
-  <a class="section" href="">"Group"</a>
+  <a class="section" href="/group/{{group.group_id}}">group_name</a>
   <i class="right chevron icon divider"></i>
-  <div class="active section">"Post Title"</div>
+  <div class="active section">{{ post.post_title}}</div>
 </div>
 
-<div class="ui segment">
-  <h3 class="ui header">{{ post_title }}</h3>
-  <img class="ui small left floated image" src="{{ post_image }}">
-  {{ post_text }}
-</div>
+{{!-- <div class="ui segment">
+  <h3 class="ui header">{{ post.post_title }}</h3>
+  <img class="ui small left floated image" src="{{ post.post_image }}">
+  {{ post.post_text }}
+</div> --}}
+
+<div class="ui items">
+  <div class="item">
+    <div class="image">
+      <img src="{{ post.post_image }}">
+    </div>
+    <div class="content">
+      <a class="header">{{ post.post_title }}</a>
+      <div class="meta">
+        <span>{{ user.username }}</span>
+      </div>
+      <div class="description">
+        <p>{{ post.post_text }}</p>
+      </div>
+      <div class="extra">
+        {{ post.created_at }}
+      </div>
+    </div>
+  </div>
 
 <div class="ui comments">
   <h3 class="ui dividing header">Comments</h3>
-  
-  {{> comments post.comments}}
+  {{#each post.comments as |comment|}}
+  {{> comment comment}}
+  {{/each}}
   
   {{#if loggedIn}}
-  <form class="ui reply form comment-form">
+  <form class="ui form comment-form">
     <div class="field">
       <textarea name="comment-body"></textarea>
     </div>
-    <div id="comment-submit" class="ui labeled submit icon button">
-      <i class="icon edit"></i> Add Comment
-    </div>
+    <button class="ui button" type="submit">Add Comment</button>
   </form>
   {{/if}}
 
 </div>
 
 {{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+<script src="javascript/add-comment.js"></script>
 {{/if}}

@@ -30,7 +30,13 @@ header {
   margin-bottom: 30px;
 }
 
-header h1 {
+header h1 a {
+  font-weight: bolder;
+  font-size: 60px;
+  color: var(--fifth-color);
+}
+
+header h1 a:hover {
   font-weight: bolder;
   font-size: 60px;
   color: var(--fifth-color);
@@ -64,7 +70,7 @@ header nav button {
   display: inline-block;
   font-size: 14px;
   border-radius: 8px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 header nav button:hover {
