@@ -98,7 +98,7 @@ header nav button:hover {
   margin: 0 auto;
   font-size: 20px;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
 .page_content {
