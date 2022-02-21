@@ -24,8 +24,6 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: sticky;
-  position: -webkit-sticky;
   top: 0;
   margin-bottom: 30px;
 }
@@ -98,7 +96,7 @@ header nav button:hover {
   margin: 0 auto;
   font-size: 20px;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
 .page_content {
@@ -107,15 +105,21 @@ header nav button:hover {
 
 footer {
   background-color: var(--second-color);
-  flex: 1 100%;
+  flex: 0 0 50px;
   margin-top: auto;
   width: 100%;
   padding: 25px 0;
-  /* position: fixed;
+}
+
+/* footer {
+  position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%; */
-}
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+} */
 
 footer h3 {
   text-align: center;

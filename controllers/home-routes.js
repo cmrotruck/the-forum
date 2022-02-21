@@ -2,6 +2,7 @@ const router = require("express").Router();
 const res = require("express/lib/response");
 const sequelize = require("../config/connection");
 const { Post, User, Comment, Group } = require("../models");
+var hasImage = false;
 
 // homepage route
 router.get("/", (req, res) => {
@@ -52,7 +53,7 @@ router.get("/groups/:id", async (req, res) => {
 router.get("/posts/:id", async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id, {
-      attributes: ["id", "post_image", "post_title", "post_text"],
+      attributes: ["id", "post_image", "group_id", "user_id", "post_title", "post_text", "created_at"],
       include: [
         {
           model: Comment,
@@ -61,26 +62,41 @@ router.get("/posts/:id", async (req, res) => {
             "comment_text",
             "post_id",
             "user_id",
-            "group_id",
             "created_at",
           ],
-          // include: {
-          //   model: Group,
-          //   attributes: [
-          //   "group_name"
-          //   ],
-          // },
         },
+        {
+          model: Group,
+          attributes: [
+            "group_name",
+          ],
+        },
+        {
+          model: User,
+          attributes: [
+            "username",
+          ]
+        }
       ],
     });
 
     const post = dbPostData.get({ plain: true });
-    console.log(post);
-    res.render("single-post", { post, loggedIn: req.session.loggedIn });
+    console.log("********" + post.post_image + "********");
+
+    if (post.post_image) {
+      hasImage = true;
+    }
+
+    console.log("********" + hasImage + "********");
+
+    res.render("single-post", { post, loggedIn: req.session.loggedIn, hasImage: hasImage });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+
+  hasImage = false;
+  
 });
 
 module.exports = router;
