@@ -15,7 +15,7 @@ const groupData = [
   },
   {
     group_name: "For Sale/Trade",
-    group_image: "/images/sale.jpg",
+    group_image: "/images/cash-register-5610295.jpg",
   },
 ];
 
